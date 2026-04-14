@@ -4,7 +4,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/Buwuhan-Tracker/', // URL Dasar GitHub Pages
+  base: './', // Menggunakan relative path untuk HashRouter
   plugins: [
     react(),
     VitePWA({
