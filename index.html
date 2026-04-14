@@ -32,6 +32,8 @@
   <body>
     <div id="root"></div>
     <script type="text/javascript">
+      // Trik SPA untuk GitHub Pages
+      // Menangkap kembali path yang dipindahkan ke query parameter oleh 404.html
       (function(l) {
         if (l.search[1] === '/' ) {
           var decoded = l.search.slice(1).split('&').map(function(s) { 

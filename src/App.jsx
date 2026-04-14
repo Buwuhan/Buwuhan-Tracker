@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react';
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AppProvider } from './context/AppContext.jsx';
 import Sidebar, { MobileNav } from './components/Layout/Sidebar.jsx';
 import Dashboard from './pages/Dashboard.jsx';
@@ -15,13 +15,13 @@ import { ManagedCloudProvider } from './context/ManagedCloudProvider.jsx';
 
 export default function App() {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <CloudProvider>
         <AppProvider>
           <InnerApp />
         </AppProvider>
       </CloudProvider>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 

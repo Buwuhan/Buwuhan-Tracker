@@ -4,7 +4,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: './', // Menggunakan relative path untuk HashRouter
+  base: '/', // Menggunakan absolute path agar sesuai dengan BrowserRouter
   plugins: [
     react(),
     VitePWA({
