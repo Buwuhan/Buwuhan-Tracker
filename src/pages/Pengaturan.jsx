@@ -381,6 +381,7 @@ export default function Pengaturan() {
               </div>
             </div>
           )}
+        </div>
 
         {/* ─── Tentang ─── */}
         <div className="about-section">
