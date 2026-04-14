@@ -4,7 +4,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: './', // Memastikan bisa di-deploy di sub-folder GitHub Pages
+  base: '/Buwuhan-Tracker/', // URL Dasar GitHub Pages
   plugins: [
     react(),
     VitePWA({
