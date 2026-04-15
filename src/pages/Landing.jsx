@@ -26,9 +26,14 @@ export default function Landing() {
               Ke Dashboard
             </button>
           ) : (
-            <button className="btn btn-primary" onClick={login}>
-              Masuk
-            </button>
+            <div className="flex gap-8">
+              <button className="btn btn-secondary" onClick={() => navigate('/app')}>
+                Coba Lokal
+              </button>
+              <button className="btn btn-primary" onClick={login}>
+                Masuk Google
+              </button>
+            </div>
           )}
         </div>
       </header>
@@ -44,10 +49,15 @@ export default function Landing() {
             Buwuhan Tracker membantu Anda mencatat sumbangan yang diterima dan diberikan saat hajatan. 
             Modern, ringkas, dan sepenuhnya dalam kendali Anda.
           </p>
-          <div className="hero-actions">
+          <div className="hero-actions" style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <button className="btn btn-primary btn-lg" onClick={handleStart} style={{ padding: '14px 32px', fontSize: '1.1rem' }}>
-              {user ? 'Buka Dashboard' : 'Mulai Sekarang — Gratis'}
+              {user ? 'Buka Dashboard' : 'Masuk dengan Google'}
             </button>
+            {!user && (
+              <button className="btn btn-secondary btn-lg" onClick={() => navigate('/app')} style={{ padding: '14px 32px', fontSize: '1.1rem', backgroundColor: 'transparent', border: '1px solid var(--gold-500)', color: 'var(--gold-400)' }}>
+                Lanjut Tanpa Login (Lokal)
+              </button>
+            )}
           </div>
         </div>
       </section>
