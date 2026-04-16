@@ -11,6 +11,8 @@ export default function BukuTamu() {
   const [editing, setEditing] = useState(null);
   const [form, setForm] = useState({ nama: '', desa: '', telepon: '', catatan: '' });
   const [sortBy, setSortBy] = useState('nama'); // nama | saldo
+  
+  const daftarDesa = [...new Set(data.orang.map(o => o.desa).filter(Boolean))].sort();
 
   const set = (k, v) => {
     const caps = ['nama', 'desa'];
@@ -151,7 +153,10 @@ export default function BukuTamu() {
           <div className="form-row">
             <div className="form-group">
               <label className="form-label">Desa / Kampung</label>
-              <input placeholder="Contoh: Karangrejo" value={form.desa} onChange={e => set('desa', e.target.value)} />
+              <input placeholder="Contoh: Karangrejo" value={form.desa} onChange={e => set('desa', e.target.value)} list="list-desa" />
+              <datalist id="list-desa">
+                {daftarDesa.map(d => <option key={d} value={d} />)}
+              </datalist>
             </div>
             <div className="form-group">
               <label className="form-label">No. Telepon</label>

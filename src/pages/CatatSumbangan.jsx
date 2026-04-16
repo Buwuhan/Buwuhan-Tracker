@@ -11,6 +11,9 @@ export default function CatatSumbangan() {
 
   const [step, setStep] = useState(1); // 1: Orang, 2: Acara, 3: Sumbangan, 4: Selesai
   const [result, setResult] = useState(null);
+  
+  const daftarDesa = [...new Set(data.orang.map(o => o.desa).filter(Boolean))].sort();
+  const daftarTempat = [...new Set(data.acara.map(a => a.tempat).filter(Boolean))].sort();
 
   // ─── Step 1: Data Orang ───────────────────────────────────
   const [orangId, setOrangId] = useState('');
@@ -130,7 +133,10 @@ export default function CatatSumbangan() {
                 <div className="form-row">
                   <div className="form-group">
                     <label className="form-label">Desa / Kampung</label>
-                    <input placeholder="Contoh: Karangrejo" value={formOrang.desa} onChange={e => setO('desa', e.target.value)} />
+                    <input placeholder="Contoh: Karangrejo" value={formOrang.desa} onChange={e => setO('desa', e.target.value)} list="list-desa" />
+                    <datalist id="list-desa">
+                      {daftarDesa.map(d => <option key={d} value={d} />)}
+                    </datalist>
                   </div>
                   <div className="form-group">
                     <label className="form-label">No. Telepon</label>
@@ -188,7 +194,10 @@ export default function CatatSumbangan() {
                   </div>
                   <div className="form-group">
                     <label className="form-label">Tempat</label>
-                    <input placeholder="Opsional" value={formAcara.tempat} onChange={e => setA('tempat', e.target.value)} />
+                    <input placeholder="Opsional" value={formAcara.tempat} onChange={e => setA('tempat', e.target.value)} list="list-tempat" />
+                    <datalist id="list-tempat">
+                      {daftarTempat.map(t => <option key={t} value={t} />)}
+                    </datalist>
                   </div>
                 </div>
               </>

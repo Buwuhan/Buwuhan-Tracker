@@ -18,6 +18,8 @@ export default function Acara() {
   const [showModal, setShowModal] = useState(false);
   const [editing, setEditing] = useState(null);
   const [form, setForm] = useState({ nama: '', tanggal: toInputDate(), jenis: 'Pernikahan', milik: 'sendiri', tempat: '', catatan: '' });
+
+  const daftarTempat = [...new Set(data.acara.map(a => a.tempat).filter(Boolean))].sort();
   const set = (k, v) => {
     const caps = ['nama', 'tempat'];
     setForm(f => ({ ...f, [k]: caps.includes(k) ? capitalizeWords(v) : v }));
@@ -163,7 +165,10 @@ export default function Acara() {
             </div>
             <div className="form-group">
               <label className="form-label">Tempat</label>
-              <input placeholder="Contoh: Balai Desa..." value={form.tempat} onChange={e => set('tempat', e.target.value)} />
+              <input placeholder="Contoh: Balai Desa..." value={form.tempat} onChange={e => set('tempat', e.target.value)} list="list-tempat" />
+              <datalist id="list-tempat">
+                {daftarTempat.map(t => <option key={t} value={t} />)}
+              </datalist>
             </div>
           </div>
           <div className="form-group">
