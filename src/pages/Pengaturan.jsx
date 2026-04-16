@@ -383,14 +383,6 @@ export default function Pengaturan() {
           )}
         </div>
 
-        {/* ─── Tentang ─── */}
-        <div className="about-section">
-          <div className="about-meta">
-            <strong>Buwuhan Tracker</strong> v1.2.0<br />
-            &copy; 2026 • Dibuat untuk memudahkan hajatan Anda.
-          </div>
-        </div>
-
       </div>
     </div>
   );

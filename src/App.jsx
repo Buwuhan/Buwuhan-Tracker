@@ -69,8 +69,9 @@ function AppFooter() {
         <a href="/privacy.html" target="_blank" rel="noopener noreferrer">Kebijakan Privasi</a>
         <span>&middot;</span>
         <a href="/terms.html" target="_blank" rel="noopener noreferrer">Syarat &amp; Ketentuan</a>
-        <span>&middot;</span>
-        <span>v1.2.0 &copy; 2026 Buwuhan Tracker</span>
+      </div>
+      <div className="app-footer-copy">
+        &copy; 2026 Buwuhan Tracker &mdash; Dibuat untuk memudahkan hajatan Anda.
       </div>
     </footer>
   );

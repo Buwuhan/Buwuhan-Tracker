@@ -1005,6 +1005,13 @@ select option {
   opacity: 0.4;
 }
 
+.app-footer-copy {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-top: 6px;
+}
+
 @media (max-width: 768px) {
   .app-footer { margin-bottom: 72px; padding: 20px 16px 12px; }
   .app-footer-links { gap: 8px; }
