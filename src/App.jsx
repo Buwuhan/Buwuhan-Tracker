@@ -15,7 +15,7 @@ import { GoogleDriveProvider } from './context/GoogleDriveContext.jsx';
 import { ManagedCloudProvider } from './context/ManagedCloudProvider.jsx';
 import { useCloud } from './context/CloudContext.jsx';
 import { useApp } from './context/AppContext.jsx';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { mergeData } from './utils/merge.js';
 import Modal from './components/UI/Modal.jsx';
 
