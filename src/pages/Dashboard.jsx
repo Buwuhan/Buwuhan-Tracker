@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useApp } from '../context/AppContext.jsx';
 import { formatRupiah, formatTanggalSingkat, formatSaldo, toInputDate } from '../utils/format.js';
 import Modal from '../components/UI/Modal.jsx';
@@ -64,22 +65,24 @@ export default function Dashboard() {
             </div>
           ) : (
             recentTrx.map(t => (
-              <div key={t.id} className="trx-item">
-                <div className={`trx-arrow ${t.arah}`}>
-                  {t.arah === 'masuk' ? '⬇️' : '⬆️'}
-                </div>
-                <div className="trx-info">
-                  <div className="trx-nama">{namaOrang(t.orangId)}</div>
-                  <div className="trx-meta">
-                    {namaAcara(t.acaraId)} · {formatTanggalSingkat(t.tanggal)}
+              <Link to={`/app/tamu/${t.orangId}`} key={t.id} style={{ textDecoration: 'none' }}>
+                <div className="trx-item card-clickable">
+                  <div className={`trx-arrow ${t.arah}`}>
+                    {t.arah === 'masuk' ? '⬇️' : '⬆️'}
+                  </div>
+                  <div className="trx-info">
+                    <div className="trx-nama">{namaOrang(t.orangId)}</div>
+                    <div className="trx-meta">
+                      {namaAcara(t.acaraId)} · {formatTanggalSingkat(t.tanggal)}
+                    </div>
+                  </div>
+                  <div className={`trx-nominal ${t.arah}`}>
+                    {t.jenis === 'uang'
+                      ? formatRupiah(t.nominal)
+                      : `${t.jumlahBarang} ${t.satuanBarang} ${t.namaBarang}`}
                   </div>
                 </div>
-                <div className={`trx-nominal ${t.arah}`}>
-                  {t.jenis === 'uang'
-                    ? formatRupiah(t.nominal)
-                    : `${t.jumlahBarang} ${t.satuanBarang} ${t.namaBarang}`}
-                </div>
-              </div>
+              </Link>
             ))
           )}
         </div>
@@ -99,14 +102,16 @@ export default function Dashboard() {
             orangDenganSaldo.map(o => {
               const { label, type } = formatSaldo(o.saldo);
               return (
-                <div key={o.id} className="trx-item">
-                  <div className="trx-arrow masuk">👤</div>
-                  <div className="trx-info">
-                    <div className="trx-nama">{o.nama}</div>
-                    <div className="trx-meta">{o.desa || '—'}</div>
+                <Link to={`/app/tamu/${o.id}`} key={o.id} style={{ textDecoration: 'none' }}>
+                  <div className="trx-item card-clickable">
+                    <div className="trx-arrow masuk">👤</div>
+                    <div className="trx-info">
+                      <div className="trx-nama">{o.nama}</div>
+                      <div className="trx-meta">{o.desa || '—'}</div>
+                    </div>
+                    <span className={`saldo-${type}`}>{label}</span>
                   </div>
-                  <span className={`saldo-${type}`}>{label}</span>
-                </div>
+                </Link>
               );
             })
           )}

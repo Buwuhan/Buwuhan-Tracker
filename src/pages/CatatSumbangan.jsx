@@ -263,8 +263,8 @@ export default function CatatSumbangan() {
           <p style={{ color: 'var(--text-muted)', marginBottom: 28 }}>Data sumbangan telah tercatat dengan baik.</p>
           <div style={{ display: 'flex', gap: 10, justifyContent: 'center', flexWrap: 'wrap' }}>
             <button className="btn btn-secondary" onClick={reset}>+ Catat Lagi</button>
-            <button className="btn btn-primary" onClick={() => navigate(`/tamu/${result?.orangId}`)}>Lihat Profil Orang</button>
-            <button className="btn btn-secondary" onClick={() => navigate(`/acara/${result?.acaraId}`)}>Lihat Acara</button>
+            <button className="btn btn-primary" onClick={() => navigate(`/app/tamu/${result?.orangId}`)}>Lihat Profil Orang</button>
+            <button className="btn btn-secondary" onClick={() => navigate(`/app/acara/${result?.acaraId}`)}>Lihat Acara</button>
           </div>
         </div>
       )}

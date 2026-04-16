@@ -42,14 +42,14 @@ export default function DetailOrang() {
   const handleHapusOrang = () => {
     if (confirm(`Hapus "${orang.nama}"? Semua transaksinya akan ikut terhapus.`)) {
       hapusOrang(id);
-      navigate('/tamu');
+      navigate('/app/tamu');
     }
   };
 
   return (
     <div>
       {/* Back */}
-      <Link to="/tamu" style={{ color: 'var(--text-muted)', fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: 6, marginBottom: 20 }}>
+      <Link to="/app/tamu" style={{ color: 'var(--text-muted)', fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: 6, marginBottom: 20 }}>
         ← Kembali ke Buku Tamu
       </Link>
 
@@ -117,15 +117,15 @@ export default function DetailOrang() {
           trxFiltered.map(t => (
             <div key={t.id} className="trx-item">
               <div className={`trx-arrow ${t.arah}`}>{t.arah === 'masuk' ? '⬇️' : '⬆️'}</div>
-              <div className="trx-info">
+              <Link to={`/app/acara/${t.acaraId}`} className="trx-info" style={{ textDecoration: 'none' }}>
                 <div className="trx-nama">
                   {t.jenis === 'uang' ? formatRupiah(t.nominal) : `${t.jumlahBarang} ${t.satuanBarang} ${t.namaBarang}`}
                 </div>
                 <div className="trx-meta">
-                  {namaAcara(t.acaraId)} · {formatTanggal(t.tanggal)}
+                  <span style={{ color: 'var(--gold-400)' }}>{namaAcara(t.acaraId)}</span> · {formatTanggal(t.tanggal)}
                   {t.catatan && <> · <em>{t.catatan}</em></>}
                 </div>
-              </div>
+              </Link>
               <div style={{ display: 'flex', gap: 4 }}>
                 <button className="btn btn-danger btn-icon btn-sm" onClick={() => handleHapusTrx(t)}>🗑️</button>
               </div>

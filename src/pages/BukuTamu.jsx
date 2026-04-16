@@ -94,7 +94,7 @@ export default function BukuTamu() {
             const { label, type } = formatSaldo(o.saldo);
             const totalTrx = data.transaksi.filter(t => t.orangId === o.id).length;
             return (
-              <Link to={`/tamu/${o.id}`} key={o.id} style={{ textDecoration: 'none' }}>
+              <Link to={`/app/tamu/${o.id}`} key={o.id} style={{ textDecoration: 'none' }}>
                 <div className="card card-clickable">
                   <div className="flex-between">
                     <div className="flex-center gap-12">

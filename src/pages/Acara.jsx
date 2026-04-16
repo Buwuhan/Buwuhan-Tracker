@@ -91,7 +91,7 @@ export default function Acara() {
               .filter(t => t.acaraId === a.id && t.arah === 'masuk' && t.jenis === 'uang')
               .reduce((s, t) => s + (t.nominal || 0), 0);
             return (
-              <Link to={`/acara/${a.id}`} key={a.id} style={{ textDecoration: 'none' }}>
+              <Link to={`/app/acara/${a.id}`} key={a.id} style={{ textDecoration: 'none' }}>
                 <div className="card card-clickable">
                   <div className="flex-between" style={{ flexWrap: 'wrap', gap: 12 }}>
                     <div style={{ display: 'flex', gap: 14, alignItems: 'center' }}>

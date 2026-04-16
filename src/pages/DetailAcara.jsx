@@ -29,13 +29,13 @@ export default function DetailAcara() {
   const handleHapusAcara = () => {
     if (confirm(`Hapus acara "${acara.nama}"? Semua transaksi terkait akan dihapus.`)) {
       hapusAcara(id);
-      navigate('/acara');
+      navigate('/app/acara');
     }
   };
 
   return (
     <div>
-      <Link to="/acara" style={{ color: 'var(--text-muted)', fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: 6, marginBottom: 20 }}>
+      <Link to="/app/acara" style={{ color: 'var(--text-muted)', fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: 6, marginBottom: 20 }}>
         ← Kembali ke Daftar Acara
       </Link>
 
@@ -96,7 +96,7 @@ export default function DetailAcara() {
                   <tr key={t.id} style={{ borderBottom: '1px solid var(--border)' }}>
                     <td style={{ padding: '10px 12px', color: 'var(--text-muted)' }}>{i + 1}</td>
                     <td style={{ padding: '10px 12px', fontWeight: 600 }}>
-                      <Link to={`/tamu/${t.orangId}`} style={{ color: 'var(--gold-400)', textDecoration: 'none' }}>
+                      <Link to={`/app/tamu/${t.orangId}`} style={{ color: 'var(--gold-400)', textDecoration: 'none' }}>
                         {namaOrang(t.orangId)}
                       </Link>
                     </td>
