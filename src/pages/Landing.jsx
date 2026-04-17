@@ -28,10 +28,10 @@ export default function Landing() {
         <div className="container">
           <h1 className="hero-title">
             Kelola Sumbangan Hajatan <br />
-            <span className="text-gold">Tanpa Ribet.</span>
+            <span className="text-gold">Gratis &Tanpa Ribet.</span>
           </h1>
           <p className="hero-subtitle">
-            Buwuhan Tracker membantu Anda mencatat sumbangan yang diterima dan diberikan saat hajatan. 
+            Buwuhan Tracker membantu Anda mencatat sumbangan yang diterima dan diberikan saat hajatan.
             Modern, ringkas, dan sepenuhnya dalam kendali Anda.
           </p>
           <div className="hero-actions" style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -84,7 +84,7 @@ export default function Landing() {
           </div>
           <h2 className="section-title" style={{ marginTop: 0 }}>Privasi Anda Prioritas Kami</h2>
           <p className="hero-subtitle" style={{ maxWidth: '700px' }}>
-            Buwuhan Tracker menggunakan <strong>Google Drive App Data Folder</strong> untuk menyimpan data Anda. 
+            Buwuhan Tracker menggunakan <strong>Google Drive App Data Folder</strong> untuk menyimpan data Anda.
             Ini berarti:
           </p>
           <div className="feature-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', marginTop: 40, textAlign: 'left' }}>
@@ -93,12 +93,12 @@ export default function Landing() {
               <p className="text-sm">Data hanya tersimpan di akun Google Anda, bukan di server kami.</p>
             </div>
             <div style={{ padding: 20 }}>
-              <h4 style={{ color: 'var(--gold-400)', marginBottom: 10 }}>Aman & Terenkripsi</h4>
-              <p className="text-sm">Menggunakan standar keamanan kelas dunia dari Google.</p>
+              <h4 style={{ color: 'var(--gold-400)', marginBottom: 10 }}>Gratis Selamanya</h4>
+              <p className="text-sm">Tanpa biaya langganan karena Anda menyediakan penyimpanan sendiri via Google Drive.</p>
             </div>
             <div style={{ padding: 20 }}>
-              <h4 style={{ color: 'var(--gold-400)', marginBottom: 10 }}>Tanpa Biaya Server</h4>
-              <p className="text-sm">Anda tidak perlu membayar biaya berlangganan penyimpanan.</p>
+              <h4 style={{ color: 'var(--gold-400)', marginBottom: 10 }}>Open Source</h4>
+              <p className="text-sm">Kode sumber terbuka murni hasil kolaborasi AI (Vibe Code) yang transparan dan aman.</p>
             </div>
           </div>
         </div>
@@ -112,7 +112,7 @@ export default function Landing() {
           <a href="https://github.com/buwuhan/buwuhan.github.io" target="_blank" rel="noopener noreferrer" className="footer-link">GitHub</a>
         </div>
         <p className="text-muted" style={{ fontSize: '0.8rem' }}>
-          © 2026 Buwuhan Tracker. Dibuat untuk melestarikan tradisi dengan cara modern.
+          © 2026 Buwuhan Tracker. Produk Vibe Code untuk melestarikan tradisi dengan cara modern.
         </p>
       </footer>
     </div>
