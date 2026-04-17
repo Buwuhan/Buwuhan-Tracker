@@ -28,7 +28,7 @@ export default function Landing() {
         <div className="container">
           <h1 className="hero-title">
             Kelola Sumbangan Hajatan <br />
-            <span className="text-gold">Gratis &Tanpa Ribet.</span>
+            <span className="text-gold">Gratis & Tanpa Ribet.</span>
           </h1>
           <p className="hero-subtitle">
             Buwuhan Tracker membantu Anda mencatat sumbangan yang diterima dan diberikan saat hajatan.
